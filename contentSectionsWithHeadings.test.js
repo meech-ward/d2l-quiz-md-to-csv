@@ -2,13 +2,13 @@ const contentSectionsWithHeadings = require('./contentSectionsWithHeadings')
 
 test('should return content and heading for one section', function() {
   expect(contentSectionsWithHeadings({
-    text: `##1
+    text: `## 1
     a
     `,
     headingSyntax: '##'
   })).toStrictEqual({'1': 'a'})
   expect(contentSectionsWithHeadings({
-    text: `##2
+    text: `## 2
     b
     `,
     headingSyntax: '##'
@@ -17,12 +17,12 @@ test('should return content and heading for one section', function() {
 
 test('should return content and heading for multiple section', function() {
   expect(contentSectionsWithHeadings({
-    text: `##1
+    text: `## 1
     a
-    ## 2
+## 2
     b
 
-    ##   3
+##   3
 
     cccc
     `,
