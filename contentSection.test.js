@@ -1,4 +1,4 @@
-const contentSection = require('./contentSections')
+const contentSection = require('./contentSection')
 
 test('should return content between two points', function() {
   expect(contentSection({
