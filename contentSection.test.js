@@ -13,6 +13,15 @@ test('should return content between two points', function() {
   })).toBe('b')
 })
 
+test('should return content between two points that could match', function() {
+  expect(contentSection({
+    text: `#11a#1`,
+    sectionStart: /#11/,
+    sectionEnd: /#1/
+  })).toBe('a')
+})
+
+
 test('should return content between two points when extra content comes before and after', function() {
   expect(contentSection({
     text: `abc#1a#2`,
