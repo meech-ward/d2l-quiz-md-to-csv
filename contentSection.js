@@ -7,5 +7,5 @@ module.exports = function({text, sectionStart, sectionEnd}) {
   let endIndex = sectionEnd ? text.search(sectionEnd) : undefined
   endIndex = endIndex === -1 ? undefined : endIndex
 
-  return text.substring(0, endIndex).trim()
+  return {text: text.substring(0, endIndex).trim()}
 }
