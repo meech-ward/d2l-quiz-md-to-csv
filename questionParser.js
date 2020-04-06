@@ -23,12 +23,12 @@ module.exports = function({text}) {
   Object.keys(answerSections).forEach(answer => {
     answerSections[answer].tests = []
     let text = answerSections[answer].text
-    console.log('test')
+    // console.log('test')
     const sectionStart = "```test\n"
     const sectionEnd = "\n```"
     while (true) {
       const test = contentSection({text, sectionStart: RegExp(sectionStart) ,sectionEnd: RegExp(sectionEnd), strict: true})
-      console.log(test)
+      // console.log(test)
       if (!test.text) {
         break
       }
