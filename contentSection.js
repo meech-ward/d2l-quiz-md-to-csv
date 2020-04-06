@@ -4,8 +4,8 @@ module.exports = function({text, sectionStart, sectionEnd}) {
 
   text = text.substring(startIndex).replace(sectionStart, '').trim()
 
-  let endIndex = sectionEnd ? text.search(sectionEnd) : undefined
-  endIndex = endIndex === -1 ? undefined : endIndex
+  let length = sectionEnd ? text.search(sectionEnd) : undefined
+  length = length === -1 ? undefined : length
 
-  return {text: text.substring(0, endIndex).trim()}
+  return {text: text.substring(0, length).trim(), startIndex, length}
 }
