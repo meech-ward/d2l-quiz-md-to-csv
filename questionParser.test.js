@@ -25,6 +25,7 @@ test('should parse the answers tests', function() {
   expect(result.Answers.answerSections[100].tests[1].text).toStrictEqual("test 2a")
   expect(result.Answers.answerSections[100].tests[2].text).toStrictEqual("test 3a")
   expect(result.Answers.answerSections[100].tests[3].text).toStrictEqual("test \n4a \nmulti \nline")
-  expect(result.Answers.answerSections[100].tests[4]).toBe(undefined)
+  expect(result.Answers.answerSections[100].tests[4].text).toStrictEqual("\ntest \n5a \n\nmulti \nline\n")
+  expect(result.Answers.answerSections[100].tests[5]).toBe(undefined)
   expect(result.Answers.answerSections[50].tests[0].text).toStrictEqual("test 1b")
 })

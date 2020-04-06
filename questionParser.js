@@ -24,10 +24,10 @@ module.exports = function({text}) {
     answerSections[answer].tests = []
     let text = answerSections[answer].text
     console.log('test')
-    const sectionStart = "```test"
-    const sectionEnd = "```"
+    const sectionStart = "```test\n"
+    const sectionEnd = "\n```"
     while (true) {
-      const test = contentSection({text, sectionStart: RegExp(sectionStart) ,sectionEnd: RegExp(sectionEnd)})
+      const test = contentSection({text, sectionStart: RegExp(sectionStart) ,sectionEnd: RegExp(sectionEnd), strict: true})
       console.log(test)
       if (!test.text) {
         break

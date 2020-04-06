@@ -55,3 +55,18 @@ test('should return content between two points when there is no section start', 
     sectionEnd: /#1/,
   })).toStrictEqual({text: 'ab', startIndex: 0, length: 2})
 })
+
+test('should return empty between two points when there is no section start or end and strict is on', function() {
+  expect(contentSection({
+    text: `a#1`,
+    sectionStart: /#2/,
+    sectionEnd: /#1/,
+    strict: true
+  })).toStrictEqual({text: '', startIndex: 0, length: 0})
+  expect(contentSection({
+    text: `#1a`,
+    sectionStart: /#1/,
+    sectionEnd: /#2/,
+    strict: true
+  })).toStrictEqual({text: '', startIndex: 0, length: 0})
+})

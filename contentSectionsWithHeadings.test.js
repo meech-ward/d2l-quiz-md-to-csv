@@ -6,13 +6,13 @@ test('should return content and heading for one section', function() {
     a
     `,
     headingSyntax: '##'
-  })['1'].text).toStrictEqual('a')
+  })['1'].text.trim()).toStrictEqual('a')
   expect(contentSectionsWithHeadings({
     text: `## 2
     b
     `,
     headingSyntax: '##'
-  })['2'].text).toStrictEqual('b')
+  })['2'].text.trim()).toStrictEqual('b')
 })
 
 test('should return content and heading for multiple section', function() {
@@ -28,7 +28,7 @@ test('should return content and heading for multiple section', function() {
     `,
     headingSyntax: '##'
   })
-  expect(result['1'].text).toStrictEqual('a')
-  expect(result['2'].text).toStrictEqual('b')
-  expect(result['3'].text).toStrictEqual('cccc')
+  expect(result['1'].text.trim()).toStrictEqual('a')
+  expect(result['2'].text.trim()).toStrictEqual('b')
+  expect(result['3'].text.trim()).toStrictEqual('cccc')
 })

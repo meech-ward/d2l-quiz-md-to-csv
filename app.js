@@ -13,11 +13,7 @@ const tests = []
 Object.keys(question.Answers.answerSections).forEach(key => {
   const answer = question.Answers.answerSections[key]
   answer.tests.forEach(test => {
-    tests.push(
-      regexTester({regexString: answer.regex.text, testString: test.text})
-    )
+    tests.push({regexString: answer.regex.text, testString: test.text})
   })
 })
-if (tests.length > 0) {
-  throw `${tests.length} test failed`
-}
+regexTester(tests)
